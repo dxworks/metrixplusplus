@@ -7,3 +7,5 @@ tests/**/*.diff.html
 .idea
 .vscode
 metrixpp/tests/**/*.db
+*.iml
+venv

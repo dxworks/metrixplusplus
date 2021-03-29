@@ -10,12 +10,11 @@ from metrixpp.mpp import api
 
 import re
 import os
-import sys
 import logging
 import time
 import binascii
 import fnmatch
-import multiprocessing.pool
+
 
 class Plugin(api.Plugin, api.Parent, api.IConfigurable, api.IRunable):
     
@@ -152,7 +151,7 @@ class DirectoryReader():
                     else:
                         logging.info("Processing: " + norm_path)
                         ts = time.time()
-                        f = open(full_path, 'rU');
+                        f = open(full_path, 'rU', errors="ignore");
                         text = f.read();
                         # getting along with the different string handling of python 2 and 3
                         # trying to get along with different encodings to get the tests running
