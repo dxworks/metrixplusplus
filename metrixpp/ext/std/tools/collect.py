@@ -152,7 +152,7 @@ class DirectoryReader():
                     else:
                         logging.info("Processing: " + norm_path)
                         ts = time.time()
-                        f = open(full_path, 'rU');
+                        f = open(full_path, 'rU', encoding="utf8", errors="replace");
                         text = f.read();
                         # getting along with the different string handling of python 2 and 3
                         # trying to get along with different encodings to get the tests running
