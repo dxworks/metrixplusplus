@@ -1,0 +1,14 @@
+name: Metrix++
+run: once
+results:
+  - dir: ${instrument}/results
+
+commands:
+  - name: collect
+    win: python "${instrument}/metrix++.py" collect --scmns --sccc --sccmi --sclcom --sclc --sclp --scmis --scmg
+    unix: python "${instrument}/metrix++.py" collect --scmns --sccc --sccmi --sclcom --sclc --sclp --scmis --scmg
+    dir: ${repo}
+  - name: export
+    win: python "${instrument}/metrix++.py" export --db-file=metrixpp.db > ${instrument}/results/${reponame}.csv
+    unix: python "${instrument}/metrix++.py" export --db-file=metrixpp.db > ${instrument}/results/${reponame}.csv
+    dir: ${repo}
