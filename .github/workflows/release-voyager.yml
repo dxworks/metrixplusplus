@@ -26,6 +26,7 @@ jobs:
       - name: Prepare Assets
         run: |
           cp -r . ../metrix++/
+          mkdir ../metrix++/results
       - name: Create Archive
         run: |
           cd ..
