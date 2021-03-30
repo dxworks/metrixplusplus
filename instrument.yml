@@ -3,7 +3,7 @@ run: once
 results:
   - dir: ${instrument}/results
     files:
-      - "!.gitkeep"
+      - "*.csv"
 
 commands:
   - name: collect
