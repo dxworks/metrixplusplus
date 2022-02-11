@@ -1,4 +1,6 @@
 # [Metrix++](https://github.com/metrixplusplus/metrixplusplus)
+This is a fork of the official project [Metrix++](https://github.com/metrixplusplus/metrixplusplus). It servers the purpose of being  a [Voyager](https://github.com/dxworks/voyager) Instrument.
+
 
 ![Metrix++ Tests](https://github.com/metrixplusplus/metrixplusplus/workflows/Metrix++%20Tests/badge.svg)
 ![Upload Python Package](https://github.com/metrixplusplus/metrixplusplus/workflows/Upload%20Python%20Package/badge.svg)
