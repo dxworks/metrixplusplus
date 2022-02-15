@@ -1,4 +1,4 @@
-name: Metrix++
+name: metrix++
 run: once
 results:
   - dir: ${instrument}/results
