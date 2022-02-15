@@ -151,22 +151,23 @@ class DirectoryReader():
                     else:
                         logging.info("Processing: " + norm_path)
                         ts = time.time()
-                        f = open(full_path, 'rU', errors="ignore");
-                        text = f.read();
+                        f = open(full_path, 'rU', errors="ignore")
+                        text = f.read()
                         # getting along with the different string handling of python 2 and 3
                         # trying to get along with different encodings to get the tests running
                         # on windows and linux
+                        checksum = 0xffffffff
                         try:
                             text = text.encode(f.encoding)
                         except:
                             pass
                         try:
                             text = text.decode('utf-8')
+                            checksum = binascii.crc32(text.encode('utf8')) & 0xffffffff # to match python 3
                         except:
                             pass
                         f.close()
-                        checksum = binascii.crc32(text.encode('utf8')) & 0xffffffff # to match python 3
-                        
+
                         db_loader = plugin.get_plugin('metrixpp.mpp.dbf').get_loader()
                         (data, is_updated) = db_loader.create_file_data(norm_path, checksum, text)
                         procerrors = parser.process(plugin, data, is_updated)
